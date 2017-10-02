@@ -2,7 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { Mongo } from 'meteor/mongo';
 
 const c = new Mongo.Collection('c');
-const o = c.observeChanges({
+const o = c.find().observeChanges({
   added(id, fields) {
     console.log("add", id, fields);
   },
