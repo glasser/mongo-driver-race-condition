@@ -1,8 +1,7 @@
-const MongoDB = require('mongodb');
+const MongoClient = require('mongodb').MongoClient;
 
-MongoDB.connect(process.env.MONGO_OPLOG_URL, {
-  autoReconnect: true,
-  reconnectTries: Infinity,
+MongoClient.connect(process.env.MONGO_OPLOG_URL, {
+//  reconnectTries: Infinity,
   poolSize: 1,
 }, (err, db) => {
   if (err) {
