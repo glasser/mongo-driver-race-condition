@@ -60,7 +60,7 @@ MongoClient.connect(process.env.MONGO_OPLOG_URL, {
               doc = null;
             }
             if (doc) {
-              console.log("got doc", doc);
+              console.log("*******GOT DOC*********", doc);
               // If we restart the cursor later, start after this one.
               if (doc.ts) {
                 selector.ts = {$gt: doc.ts};

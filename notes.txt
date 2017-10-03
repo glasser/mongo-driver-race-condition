@@ -47,3 +47,34 @@ Db also has a state on this.s.
 the ReplSet (non-core) is the db.s.topology
 
 cursors choose a server with topology.getServer
+
+
+
+5 -> 4
+
+!init
+got server 5
+cursorId is null
+calling _find
+Pool.write new oplog query (requestId 33)
+added as only non-monitoring
+however, the connectino is disconnected so we don't pop it.
+done executing.
+
+then we write a $cmd ismaster
+
+
+
+5 -> 4
+got error from nextObject: connection to 5 closed
+!init
+got server 5
+cursorId is null
+calling _find
+Pool.write new oplog query (requestId 26)
+added as only non-monitoring
+however, the connectino is disconnected so we don't pop it.
+done executing.
+
+
+got primary
