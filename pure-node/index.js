@@ -3,7 +3,6 @@ const MongoDB = require('mongodb');
 MongoDB.connect(process.env.MONGO_OPLOG_URL, {
   autoReconnect: true,
   reconnectTries: Infinity,
-  native_parser: false,
   poolSize: 1,
 }, (err, db) => {
   if (err) {
