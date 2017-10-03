@@ -1,2 +1,49 @@
 I thought that reconnectTries: Infinity was relevant but I can reproduce without
 it.
+
+The issue happens when the last nextFunction call ends up in the "if we don't
+have a cursorId" state.
+
+
+Looks like
+
+```
+calling nextObject
+CALLING nextFunction
+HERE 2
+got error from nextObject: MongoError: connection 2 to c615.lighthouse.4.mongolayer.com:10615 closed
+restarting cursor soon
+calling nextObject
+CALLING nextFunction
+!init
+cursorId is null
+calling _find
+got joined primary c615.lighthouse.4.mongolayer.com:10615 => {"setName":"set-59d2c65e61320f48ba000da1","setVersion":4,"ismaster":true,"secondary":false,"hosts":["c615.lighthouse.4.mongolayer.com:10615","c615.lighthouse.5.mongolayer.com:10615"],"primary":"c615.lighthouse.5.mongolayer.com:10615","me":"c615.lighthouse.5.mongolayer.com:10615","electionId":"59d3cd23096f160cb880fcfc","maxBsonObjectSize":16777216,"maxMessageSizeBytes":48000000,"maxWriteBatchSize":1000,"localTime":"2017-10-03T17:47:19.927Z","maxWireVersion":3,"minWireVersion":0,"ok":1}
+failing over to c615.lighthouse.5.mongolayer.com:10615
+got joined secondary c615.lighthouse.5.mongolayer.com:10615 => {"setName":"set-59d2c65e61320f48ba000da1","setVersion":4,"ismaster":false,"secondary":true,"hosts":["c615.lighthouse.4.mongolayer.com:10615","c615.lighthouse.5.mongolayer.com:10615"],"primary":"c615.lighthouse.5.mongolayer.com:10615","me":"c615.lighthouse.4.mongolayer.com:10615","maxBsonObjectSize":16777216,"maxMessageSizeBytes":48000000,"maxWriteBatchSize":1000,"localTime":"2017-10-03T17:47:20.127Z","maxWireVersion":3,"minWireVersion":0,"ok":1}
+```
+
+OK so we have a new cursor, we send the command on the wireProtocolHandler, then
+we get stuck in _find.
+
+
+object{
+  servers: [{host, port}]
+  auth: {}
+  server_options: {socketOptions:{}}
+  db_options: {readPreference: "primary", authSource:"asdf", poolSize: 1},
+  rs_options: {rs_name: "myset", socketOptions: {}},
+  mongos_options: {socketOptions: {}}
+}
+
+servers get mapped into Server objecst from mongodb non-core
+
+you have new Db(dbname, new ReplSet(servers, options), options)
+then db.open(callback)
+
+replsets have a state on this.s.  its .s.replset points to a Core replset.
+
+Db also has a state on this.s.
+the ReplSet (non-core) is the db.s.topology
+
+cursors choose a server with topology.getServer

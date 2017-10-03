@@ -1,0 +1,1067 @@
+
+got error from nextObject: MongoError: connection 2 to c615.lighthouse.4.mongolayer.com:10615 closed
+restarting cursor soon
+calling nextObject
+CALLING nextFunction
+!init
+cursorId is null
+calling _find
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'local.oplog.rs',
+  query: { ns: /^testdb\./, ts: { '$gt': [Object] } },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: 1000,
+     checkKeys: false,
+     returnFieldSelector: {},
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: 1000,
+  returnFieldSelector: {},
+  requestId: 65,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: 1000,
+  tailable: true,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: true,
+  exhaust: false,
+  partial: false } {}
+operation is { cb: [Function: queryCallback],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 65,
+  buffer: 
+   [ <Buffer 55 00 00 00 41 00 00 00 00 00 00 00 d4 07 00 00 22 00 00 00 6c 6f 63 61 6c 2e 6f 70 6c 6f 67 2e 72 73 00 00 00 00 00 e8 03 00 00>,
+     <Buffer 2a 00 00 00 0b 6e 73 00 5e 74 65 73 74 64 62 5c 2e 00 00 03 74 73 00 12 00 00 00 11 24 67 74 00 01 00 00 00 12 cf d3 59 00 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: false,
+  noResponse: false,
+  socketTimeout: undefined,
+  monitoring: undefined }
+executing now
+_execute top
+now executing
+waitForAuth done
+disconnected connection
+no available
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 66,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 66,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 66,
+  buffer: 
+   [ <Buffer 37 00 00 00 42 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: 
+   { ismaster: true,
+     client: 
+      { driver: [Object],
+        os: [Object],
+        platform: 'Node.js v8.5.0, LE, mongodb-core: 2.1.15' } },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     slaveOk: true },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 67,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: true,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 67,
+  buffer: 
+   [ <Buffer 02 01 00 00 43 00 00 00 00 00 00 00 d4 07 00 00 04 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer db 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 03 63 6c 69 65 6e 74 00 c3 00 00 00 03 64 72 69 76 65 72 00 2a 00 00 00 02 6e 61 6d 65 00 07 00 00 00 6e ... > ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: false,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: undefined }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no queue
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+_execute top
+now executing
+done executing
+_execute top
+now executing
+done executing
+_execute top
+now executing
+done executing
+got joined secondary c615.lighthouse.4.mongolayer.com:10615 => {"setName":"set-59d2c65e61320f48ba000da1","setVersion":4,"ismaster":false,"secondary":true,"hosts":["c615.lighthouse.4.mongolayer.com:10615","c615.lighthouse.5.mongolayer.com:10615"],"me":"c615.lighthouse.4.mongolayer.com:10615","maxBsonObjectSize":16777216,"maxMessageSizeBytes":48000000,"maxWriteBatchSize":1000,"localTime":"2017-10-03T17:55:39.977Z","maxWireVersion":3,"minWireVersion":0,"ok":1}
+no longer sure who is primary
+waitForAuth done
+no queue
+waitForAuth done
+no queue
+waitForAuth done
+no queue
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 71,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 71,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 71,
+  buffer: 
+   [ <Buffer 37 00 00 00 47 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+got joined primary null => {"setName":"set-59d2c65e61320f48ba000da1","setVersion":4,"ismaster":true,"secondary":false,"hosts":["c615.lighthouse.4.mongolayer.com:10615","c615.lighthouse.5.mongolayer.com:10615"],"primary":"c615.lighthouse.5.mongolayer.com:10615","me":"c615.lighthouse.5.mongolayer.com:10615","electionId":"59d3cf1c096f160cb880fcfe","maxBsonObjectSize":16777216,"maxMessageSizeBytes":48000000,"maxWriteBatchSize":1000,"localTime":"2017-10-03T17:55:49.596Z","maxWireVersion":3,"minWireVersion":0,"ok":1}
+failing over to c615.lighthouse.5.mongolayer.com:10615
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 72,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 72,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 72,
+  buffer: 
+   [ <Buffer 37 00 00 00 48 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+
+
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 73,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 73,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 73,
+  buffer: 
+   [ <Buffer 37 00 00 00 49 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 74,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 74,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 74,
+  buffer: 
+   [ <Buffer 37 00 00 00 4a 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 75,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 75,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 75,
+  buffer: 
+   [ <Buffer 37 00 00 00 4b 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 76,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 76,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 76,
+  buffer: 
+   [ <Buffer 37 00 00 00 4c 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 77,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 77,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 77,
+  buffer: 
+   [ <Buffer 37 00 00 00 4d 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 78,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 78,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 78,
+  buffer: 
+   [ <Buffer 37 00 00 00 4e 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 79,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 79,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 79,
+  buffer: 
+   [ <Buffer 37 00 00 00 4f 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 80,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 80,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 80,
+  buffer: 
+   [ <Buffer 37 00 00 00 50 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 81,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 81,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 81,
+  buffer: 
+   [ <Buffer 37 00 00 00 51 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 82,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 82,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 82,
+  buffer: 
+   [ <Buffer 37 00 00 00 52 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 83,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 83,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 83,
+  buffer: 
+   [ <Buffer 37 00 00 00 53 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
+calling Pool.write Query {
+  bson: BSON {},
+  ns: 'admin.$cmd',
+  query: { ismaster: true },
+  options: 
+   { numberToSkip: 0,
+     numberToReturn: -1,
+     checkKeys: false,
+     serializeFunctions: false,
+     ignoreUndefined: false },
+  numberToSkip: 0,
+  numberToReturn: -1,
+  returnFieldSelector: null,
+  requestId: 84,
+  serializeFunctions: false,
+  ignoreUndefined: false,
+  maxBsonSize: 16777216,
+  checkKeys: false,
+  batchSize: -1,
+  tailable: false,
+  slaveOk: false,
+  oplogReplay: false,
+  noCursorTimeout: false,
+  awaitData: false,
+  exhaust: false,
+  partial: false } { raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  command: true,
+  monitoring: true,
+  fullResult: false,
+  requestId: 84,
+  socketTimeout: 30000 }
+operation is { cb: [Function],
+  raw: false,
+  promoteLongs: true,
+  promoteValues: true,
+  promoteBuffers: false,
+  fullResult: false,
+  requestId: 84,
+  buffer: 
+   [ <Buffer 37 00 00 00 54 00 00 00 00 00 00 00 d4 07 00 00 00 00 00 00 61 64 6d 69 6e 2e 24 63 6d 64 00 00 00 00 00 ff ff ff ff>,
+     <Buffer 10 00 00 00 08 69 73 6d 61 73 74 65 72 00 01 00> ],
+  immediateRelease: false,
+  documentsReturnedIn: undefined,
+  command: true,
+  noResponse: false,
+  socketTimeout: 30000,
+  monitoring: true }
+executing now
+_execute top
+now executing
+waitForAuth done
+connected connection
+no available
+done executing
+_execute top
+now executing
+waitForAuth done
+no queue
+done executing
