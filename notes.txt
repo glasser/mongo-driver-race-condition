@@ -1,0 +1,2 @@
+I thought that reconnectTries: Infinity was relevant but I can reproduce without
+it.
