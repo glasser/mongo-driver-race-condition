@@ -77,4 +77,32 @@ however, the connectino is disconnected so we don't pop it.
 done executing.
 
 
-got primary
+
+
+
+5 -> 4
+
+got error from nextObject: connection to 5 closed
+!init
+got server 5
+cursorId is null
+calling _find
+Pool.write new oplog query (requestId 24)
+added as only non-monitoring
+however, the connectino is disconnected so we don't pop it.
+done executing.
+
+
+we write ismaster to 4
+
+
+we learn (probably from the ismaster) that 4 is the primary
+
+on 5, we continue to have no available
+
+
+we write another ismaster to 4
+
+we get the connectNewServers (CNS on interval) for 5.
+we create a brand new 5 queue.
+create a new connection
