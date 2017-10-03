@@ -109,3 +109,12 @@ create a new connection
 
 Unfortunately my fix doesn't actually fix it. Need to dig into whether or not
 the Server actually gets destroyed.
+
+
+
+4->5
+
+5->4
+got error from nextObject: closed
+we're on pool 3 for 5
+write it out
