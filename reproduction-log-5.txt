@@ -11875,4 +11875,4 @@ calling Pool.write c615.lighthouse.4.mongolayer.com 4 Query {
   fullResult: false,
   requestId: 140,
   socketTimeout: 3  C-c C-c
-glasser@glasser-mbp 130 ~/Projects/Meteor/compose-problems master *% u+11 p+11 $ 
+glasser@glasser-mbp 130 ~/Projects/Meteor/compose-problems master *% u+11 p+11 $
