@@ -118,3 +118,25 @@ the Server actually gets destroyed.
 got error from nextObject: closed
 we're on pool 3 for 5
 write it out
+
+
+
+The problem happens when the toplogy still thinks it is connected
+
+Seems to be difference between connection closed and operation interrupted.
+
+
+OK. If the operation is *just* interrupted, not closed, then it might go forward
+immediately and get it from queue into workItems, which is OK.
+
+And if it's closed and we update the repl state to say the server is gone, then
+we use the disconnectHandler and it's OK.
+
+The problem is if we see one level of closed (operation is closed) but not another???
+
+if it breaks with "has sockets" I want to see why
+
+Why are there more available with poolSize 1.
+
+
+THERE ARE TWO COPIES OF THE SAME CONNECTION IN AVAILABLECONNECTIONS
