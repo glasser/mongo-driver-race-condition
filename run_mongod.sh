@@ -80,6 +80,9 @@ while true; do
   sleep 1
 done
 
+echo
+echo "Ready to run the reproduction"
+
 
 wait $PID0
 wait $PID1
