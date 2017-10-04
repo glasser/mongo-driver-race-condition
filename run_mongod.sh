@@ -42,3 +42,6 @@ while true; do
   fi
   sleep 1
 done
+
+wait $PID0
+wait $PID1
