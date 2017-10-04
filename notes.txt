@@ -140,3 +140,29 @@ Why are there more available with poolSize 1.
 
 
 THERE ARE TWO COPIES OF THE SAME CONNECTION IN AVAILABLECONNECTIONS
+
+
+
+
+how does this happen
+
+we make a new pool for c615.lighthouse.5.mongolayer.com 3
+we make a conn to it (id 3)
+we move it to available as part of the Pool.connect
+we write ismaster to it. for some reason monitoring is undefined?
+we run authenticateStragglers on it which does a no-op inUse -> available
+
+
+we write another ismaster to it.  this time it is monitoring!
+it moves the connection to inUse
+
+somewhere around here we Pool.auth
+we clear live connections
+then we get the ismaster answer back.  this moves us back into available connections.
+
+
+
+theories:
+
+  - authenticateStragglers shouldn't do anything if we're currently authenticating
+  - authenticateLiveConnections should actually 

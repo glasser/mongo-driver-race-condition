@@ -1,0 +1,30 @@
+queue now c615.lighthouse.4.mongolayer.com 2 0
+no queue c615.lighthouse.4.mongolayer.com 2
+done executing c615.lighthouse.4.mongolayer.com 2
+got error from nextObject: MongoError: connection 2 to c615.lighthouse.4.mongolayer.com:10615 closed
+restarting cursor soon
+calling nextObject
+CALLING nextFunction
+!init
+save for later 1
+
+
+got error from nextObject: MongoError: connection 2 to c615.lighthouse.4.mongolayer.com:10615 closed
+restarting cursor soon
+RSS 1 removing server
+Trace
+    at ReplSetState.remove (/Users/glasser/Projects/Meteor/compose-problems/pure-node/node_modules/mongodb-core/lib/topologies/replset_state.js:164:13)
+    at Server.<anonymous> (/Users/glasser/Projects/Meteor/compose-problems/pure-node/node_modules/mongodb-core/lib/topologies/replset.js:626:28)
+    at emitOne (events.js:115:13)
+    at Server.emit (events.js:210:7)
+    at Pool.<anonymous> (/Users/glasser/Projects/Meteor/compose-problems/pure-node/node_modules/mongodb-core/lib/topologies/server.js:350:12)
+    at emitOne (events.js:115:13)
+    at Pool.emit (events.js:210:7)
+    at Connection.<anonymous> (/Users/glasser/Projects/Meteor/compose-problems/pure-node/node_modules/mongodb-core/lib/connection/pool.js:282:12)
+    at Object.onceWrapper (events.js:318:30)
+    at emitTwo (events.js:125:13)
+calling nextObject
+CALLING nextFunction
+!init
+RSISCONN: hasPrimary
+save for later 1
