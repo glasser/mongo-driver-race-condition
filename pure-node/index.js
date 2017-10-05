@@ -16,7 +16,7 @@ MongoClient.connect(process.env.MONGO_OPLOG_URL, {
   }
 
   db.serverConfig.on('joined', (kind, doc) => {
-    console.log(`got joined ${kind} ${primary} => ${JSON.stringify(doc)}`);
+    console.log(`got joined ${kind} ${doc.me}`);
     if (kind === 'primary') {
       if (doc.primary !== primary) {
         primary = doc.primary;
@@ -24,7 +24,7 @@ MongoClient.connect(process.env.MONGO_OPLOG_URL, {
       }
     } else if (doc.me === primary) {
       primary = null;
-      console.log("no longer sure who is primary");
+      // console.log("no longer sure who is primary");
     }
   });
 

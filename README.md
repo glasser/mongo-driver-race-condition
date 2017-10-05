@@ -89,21 +89,34 @@ This script connects to the replset and tails the oplog.  The script itself is
 in `pure-node/index.js`. It uses a copy of the mongodb driver that has been
 checked into the git repo --- no need to run `npm install`.
 
-You should see it connect to the servers. It will print "stalling" while it's
-setting up the race condition and "done stalling" when it's done (**twice each,
-for the two servers**).  Don't go on until you've see `done stalling` twice.
-For some reason this seems to only sometimes work --- either you'll see two
-`done stalling` messages close to each other, or you'll just see one and we
-won't actually be able to reproduce the bug. So if you only see one `done
-stalling`, try `run_node.sh` again. If you still can't get two `done stalling`
-messages to occur, maybe try stepping down the primary (see step 4)?  This is
-the only aspect of the reproduction that has been inconsistent; sorry.
+You should see a message `stalling replset` and no more messages for 10
+seconds. You should then see three `done stalling` messages, like this (in some
+order):
 
-Anyway, once you've got the `done stalling` bit taken care of, the script will
-tail the oplog. It will (assuming you're running `loop.sh`) printing out a
-`*******GOT DOC*********` message about every second. Because the inserted
-document has a field that's a timestamp string, you can see which iterations of
-`loop.sh` correspond to which oplog entries.
+```
+done stalling replset
+done stalling pool (without even starting) 21001 1
+done stalling pool (without even starting) 21000 0
+```
+
+(If for some reason you only see one copy of `done stalling pool` rather than 2,
+the reproduction will probably not work. I believe I've fixed it so this always
+works properly, but watch out for it. If you only see one, try restarting
+`run_node.sh` a few times, and maybe try `./step_down.sh` once if that doesn't
+work.  But hopefully this is not a problem.)
+
+The stalling messages indicate parts of the driver that have had the equivalent
+of "sleeps" inserted into them until other pieces of the puzzle were ready.
+
+You should then see it print a message like `duplicate connection detected: 1 [
+'availableConnections', 'availableConnections' ]` followed by stack traces.
+This is my code that detects the underlying connection state corruption, though
+I don't consider this the end-user-visible bug.
+
+Now the script will tail the oplog. It will (assuming you're running `loop.sh`)
+printing out a `*******GOT DOC*********` message about every second. Because the
+inserted document has a field that's a timestamp string, you can see which
+iterations of `loop.sh` correspond to which oplog entries.
 
 ## Shell 4: Stepping down
 
@@ -112,20 +125,32 @@ fourth shell. This will ask the current primary to step down.  You should see
 your `loop.sh` start to successfully write to the other server, perhaps with a
 few iterations in the middle where both are errors.
 
-Note that this doesn't always actually make the step-down happen.: sometimes it
-prints a message about `No electable secondaries caught up`. In that case, just
-try again in a few seconds.
+Note that this doesn't always actually make the step-down happen.: sometimes
+`./step_down.sh` prints a message about `No electable secondaries caught up`. In
+that case, just try again in a few seconds.
 
-Confusingly, when this **succeeds**, it usually looks like an error: something
-like `Error: error doing query: failed`. That's because a successful step-down
-terminates the connection that sent the message.
+Confusingly, when `./step_down.sh` **succeeds**, it usually looks like an error:
+something like `Error: error doing query: failed`. That's because a successful
+step-down terminates the connection that sent the message.
 
 OK, so you've had a successful step-down, according to `loop.sh`.  Look over at
 your `run_node.sh` shell.
 
 If you're on the `broken` git branch, the lovely stream of `*******GOT DOC*********`
-will have ground to a halt.  It should print some messages about observing
-primary changes, but the oplog tailing will not keep going.
+will have ground to a halt.
 
-If you're on the `fixed` git branch, the tailing should instead recover and
-start showing `*******GOT DOC*********` very soon.
+It should print three messages about the replset changing in some order:
+
+```
+got joined secondary 127.0.0.1:21001
+got joined primary 127.0.0.1:21000
+failing over to 127.0.0.1:21000
+```
+
+Wait until these show up.  On the `broken` branch, these will show up. But no
+more `GOT DOC` messages will print again: ie, even though the driver managed to
+see the failover, the tail query has vanished into the ether.
+
+However, if you're on the `fixed` git branch, the tailing should instead recover
+and start showing `*******GOT DOC*********` very soon after failing over, and no
+`duplicate connection detected` message should ever print.
