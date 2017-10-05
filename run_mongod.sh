@@ -47,7 +47,7 @@ done
 
 echo
 echo "Setting up auth"
-./mongo --host rs0/127.0.0.1:21000,127.0.0.1:21001 admin --eval 'db.createUser({user: "testuser", pwd: "testpass", roles: [ "root" ]})'
+./mongo mongodb://127.0.0.1:21000,127.0.0.1:21001/admin?replicaSet=rs0 --eval 'db.createUser({user: "testuser", pwd: "testpass", roles: [ "root" ]})'
 
 echo
 echo "Stopping mongod"

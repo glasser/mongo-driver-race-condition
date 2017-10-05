@@ -5,7 +5,7 @@ set -o pipefail
 
 cd "$(dirname "$0")"
 
-MONGO_VERSION="3.0.11"
+MONGO_VERSION="3.4.9"
 
 # ARCH/OS calculation borrowed from Meteor dev bundle.
 UNAME="$(uname)"
